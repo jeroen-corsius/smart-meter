@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeter.Extractor", "SmartMeter.Extractor\SmartMeter.Extractor.csproj", "{41037ADE-AB60-470E-98B6-A9940FA0E6A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMeter.Extractor", "SmartMeter.Extractor\SmartMeter.Extractor.csproj", "{41037ADE-AB60-470E-98B6-A9940FA0E6A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1127EB6D-4043-4061-B630-9C4D45330E79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeter.Business", "SmartMeter.Business\SmartMeter.Business.csproj", "{9088E15F-3664-4AB4-A099-6AEAB58A428F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeter.Business.Tests", "SmartMeter.Business.Tests\SmartMeter.Business.Tests.csproj", "{4A157D56-2113-4D83-96B8-6FFDFD7FB2BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +21,22 @@ Global
 		{41037ADE-AB60-470E-98B6-A9940FA0E6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41037ADE-AB60-470E-98B6-A9940FA0E6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41037ADE-AB60-470E-98B6-A9940FA0E6A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9088E15F-3664-4AB4-A099-6AEAB58A428F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9088E15F-3664-4AB4-A099-6AEAB58A428F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9088E15F-3664-4AB4-A099-6AEAB58A428F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9088E15F-3664-4AB4-A099-6AEAB58A428F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A157D56-2113-4D83-96B8-6FFDFD7FB2BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A157D56-2113-4D83-96B8-6FFDFD7FB2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A157D56-2113-4D83-96B8-6FFDFD7FB2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A157D56-2113-4D83-96B8-6FFDFD7FB2BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4A157D56-2113-4D83-96B8-6FFDFD7FB2BD} = {1127EB6D-4043-4061-B630-9C4D45330E79}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {314D61E9-DB5E-4A6F-A53C-85C35BFA1D18}
 	EndGlobalSection
 EndGlobal
