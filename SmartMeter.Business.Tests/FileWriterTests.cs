@@ -17,9 +17,9 @@ namespace SmartMeter.Business.Tests {
 
       FileWriter fileWriter = new FileWriter();
       fileWriter
-        .WithContents("Test Contents")
         .WithPath(Path.Combine(AppContext.BaseDirectory, "output-files"))
         .WithFilename(expectedFilename)
+        .WithContents("Test Contents")
         .Write();
 
       Assert.IsTrue(File.Exists(Path.Combine(AppContext.BaseDirectory, "output-files", expectedFilename)));
@@ -32,9 +32,9 @@ namespace SmartMeter.Business.Tests {
 
       FileWriter fileWriter = new FileWriter();
       fileWriter
-        .WithContents(expectedFileContents)
         .WithPath(Path.Combine(AppContext.BaseDirectory, "output-files"))
         .WithFilename(filename)
+        .WithContents(expectedFileContents)
         .Write();
 
       string fullFilePath = Path.Combine(AppContext.BaseDirectory, "output-files", filename);
