@@ -4,8 +4,4 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SmartMeter.Business.Interface\SmartMeter.Business.Interface.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,25 +1,25 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
+using SmartMeter.Business.Interface;
 
 namespace SmartMeter.Business {
-  public class FileWriter {
+  public class FileWriter : IWriteFile {
     private string _Contents;
     private string _Path;
     private string _Filename;
 
-    public FileWriter WithContents(string contents) {
+    public IWriteFile WithContents(string contents) {
       _Contents = contents;
 
       return this;
     }
 
-    public FileWriter WithPath(string path) {
+    public IWriteFile WithPath(string path) {
       _Path = path;
 
       return this;
     }
 
-    public FileWriter WithFilename(string filename) {
+    public IWriteFile WithFilename(string filename) {
       _Filename = filename;
 
       return this;
