@@ -10,7 +10,7 @@ namespace SmartMeter.Business {
       string fileContents = smartMeterReader.Read();
 
       fileWriter
-        .WithPath(Path.Combine(AppContext.BaseDirectory, "output-files"))
+        .WithPath(Path.Combine(AppContext.BaseDirectory, "files", "extracted"))
         .WithFilename(CreateFilename())
         .WithContents(fileContents)
         .Write();
