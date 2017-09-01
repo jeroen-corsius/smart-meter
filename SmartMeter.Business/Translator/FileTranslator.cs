@@ -10,10 +10,11 @@ namespace SmartMeter.Business.Translator {
     public ITelegram Translate(FileInfo file) {
       string fileContents = File.ReadAllText(file.FullName);
 
+      //TODO: Move regex patterns to property attributes
       Regex timestampRegex = new Regex("(?<=1\\.0\\.0)(?:\\()[^\\d]*(\\d+)[^\\d]*(?:\\))", RegexOptions.Multiline);
       Match timestampMatch = timestampRegex.Match(fileContents);
       string timestampMatchValue = timestampMatch.Groups[1].Value;
-      DateTime timestamp = DateTime.ParseExact(timestampMatchValue, "yyMMddhhmmss", CultureInfo.InvariantCulture);
+      DateTime timestamp = DateTime.ParseExact(timestampMatchValue, "yyMMddHHmmss", CultureInfo.InvariantCulture);
 
       Regex electrictyConsumedTariff1 = new Regex("(?<=1\\.8\\.1)(?:\\()(\\d+\\.\\d+)(?:\\*kWh\\))", RegexOptions.Multiline);
       Match electricityConsumedTariff1Match = electrictyConsumedTariff1.Match(fileContents);
