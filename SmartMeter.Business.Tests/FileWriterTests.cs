@@ -8,7 +8,7 @@ namespace SmartMeter.Business.Tests {
   public class FileWriterTests {
     [TestInitialize]
     public void CleanOutputDirectory() {
-      string outputDirectory = Path.Combine(AppContext.BaseDirectory, "output-files");
+      string outputDirectory = Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "extracted");
       if (Directory.Exists(outputDirectory)) Directory.Delete(outputDirectory, true);
     }
 
@@ -18,12 +18,12 @@ namespace SmartMeter.Business.Tests {
 
       FileWriter fileWriter = new FileWriter();
       fileWriter
-        .WithPath(Path.Combine(AppContext.BaseDirectory, "output-files"))
+        .WithPath(Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "extracted"))
         .WithFilename(expectedFilename)
         .WithContents("Test Contents")
         .Write();
 
-      Assert.IsTrue(File.Exists(Path.Combine(AppContext.BaseDirectory, "output-files", expectedFilename)));
+      Assert.IsTrue(File.Exists(Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "extracted", expectedFilename)));
     }
 
     [TestMethod]
@@ -33,12 +33,12 @@ namespace SmartMeter.Business.Tests {
 
       FileWriter fileWriter = new FileWriter();
       fileWriter
-        .WithPath(Path.Combine(AppContext.BaseDirectory, "output-files"))
+        .WithPath(Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "extracted"))
         .WithFilename(filename)
         .WithContents(expectedFileContents)
         .Write();
 
-      string fullFilePath = Path.Combine(AppContext.BaseDirectory, "output-files", filename);
+      string fullFilePath = Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "extracted", filename);
       string actualFileContents = File.ReadAllText(fullFilePath);
 
       Assert.AreEqual(expectedFileContents, actualFileContents);
