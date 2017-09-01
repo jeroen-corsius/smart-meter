@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading;
-using SmartMeter.Business;
+using SmartMeter.Business.Extractor;
 
 namespace SmartMeter.Extractor {
   class Program {

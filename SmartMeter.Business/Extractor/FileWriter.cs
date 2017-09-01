@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using SmartMeter.Business.Interface;
+using SmartMeter.Business.Interface.Extractor;
 
 namespace SmartMeter.Business.Extractor {
   public class FileWriter : IWriteFile {

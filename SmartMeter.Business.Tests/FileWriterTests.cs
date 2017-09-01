@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SmartMeter.Business.Extractor;
 
 namespace SmartMeter.Business.Tests {
   [TestClass]

@@ -2,6 +2,7 @@
 using System.Text;
 using RJCP.IO.Ports;
 using SmartMeter.Business.Interface;
+using SmartMeter.Business.Interface.Extractor;
 
 namespace SmartMeter.Business.Extractor {
   public class SmartMeterReader : IReadSmartMeter {
