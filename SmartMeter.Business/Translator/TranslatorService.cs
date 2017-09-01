@@ -24,6 +24,8 @@ namespace SmartMeter.Business.Translator {
             .WithFilename(_CreateFilename(extractedFile))
             .WithContents(serializedTelegram)
             .Write();
+
+          //TODO: Remove extracted file after created translated file
         }
         catch (Exception ex) {
           Console.WriteLine($"An error occured while translating file '{extractedFile.FullName}': {ex}");
