@@ -15,6 +15,8 @@ namespace SmartMeter.Business.Extractor {
         .WithFilename(CreateFilename())
         .WithContents(fileContents)
         .Write();
+
+      Console.WriteLine($"{DateTime.UtcNow}: Extracted data from smart meter");
     }
 
     public string CreateFilename() {

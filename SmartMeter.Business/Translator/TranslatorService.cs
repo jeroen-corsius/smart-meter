@@ -18,7 +18,7 @@ namespace SmartMeter.Business.Translator {
           string serializedTelegram = JsonConvert.SerializeObject(telegram);
 
           IWriteFile fileWriter = new FileWriter();
-        
+
           fileWriter
             .WithPath(Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "translated"))
             .WithFilename(_CreateFilename(extractedFile))
@@ -26,6 +26,8 @@ namespace SmartMeter.Business.Translator {
             .Write();
 
           extractedFile.Delete();
+
+          Console.WriteLine($"{DateTime.UtcNow}: Translated '{extractedFile.Name}'");
         }
         catch (Exception ex) {
           Console.WriteLine($"An error occured while translating file '{extractedFile.FullName}': {ex}");
@@ -34,7 +36,10 @@ namespace SmartMeter.Business.Translator {
     }
 
     private FileInfo[] _ListExtractedFiles() {
-      DirectoryInfo directoryInfo = new DirectoryInfo(Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "extracted"));
+      string path = Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "extracted");
+
+      Directory.CreateDirectory(path);
+      DirectoryInfo directoryInfo = new DirectoryInfo(path);
 
       //TODO: Filter for specific file extensions to prevent reading uncompleted files
       return directoryInfo.GetFiles();

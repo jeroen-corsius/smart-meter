@@ -17,7 +17,9 @@ namespace SmartMeter.Business.Loader {
 
           telegramManager.Save(telegram);
 
-          //TODO: Remove translated file after loading
+          translatedFile.Delete();
+
+          Console.WriteLine($"{DateTime.UtcNow}: Loaded '{translatedFile.Name}'");
         }
         catch (Exception ex) {
           Console.WriteLine($"An error occured while loading file '{translatedFile.FullName}': {ex}");
@@ -26,7 +28,10 @@ namespace SmartMeter.Business.Loader {
     }
 
     private FileInfo[] _ListTranslatedFiles() {
-      DirectoryInfo directoryInfo = new DirectoryInfo(Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "translated"));
+      string path = Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "translated");
+
+      Directory.CreateDirectory(path);
+      DirectoryInfo directoryInfo = new DirectoryInfo(path);
 
       //TODO: Filter for specific file extensions to prevent reading uncompleted files
       return directoryInfo.GetFiles();
