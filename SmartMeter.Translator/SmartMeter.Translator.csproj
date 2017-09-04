@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartMeter.Business\SmartMeter.Business.csproj" />
+    <ProjectReference Include="..\SmartMeter.Configuration\SmartMeter.Configuration.csproj" />
   </ItemGroup>
 
 </Project>

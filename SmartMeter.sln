@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeter.Persistence.Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeter.Persistence", "SmartMeter.Persistence\SmartMeter.Persistence.csproj", "{7254B780-B2D4-4429-B33B-6003F02BCB7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeter.Configuration", "SmartMeter.Configuration\SmartMeter.Configuration.csproj", "{5D938C8C-FFFD-437D-BBDA-02ADA779A1FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{7254B780-B2D4-4429-B33B-6003F02BCB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7254B780-B2D4-4429-B33B-6003F02BCB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7254B780-B2D4-4429-B33B-6003F02BCB7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D938C8C-FFFD-437D-BBDA-02ADA779A1FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D938C8C-FFFD-437D-BBDA-02ADA779A1FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D938C8C-FFFD-437D-BBDA-02ADA779A1FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D938C8C-FFFD-437D-BBDA-02ADA779A1FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

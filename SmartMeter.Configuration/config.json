@@ -1,0 +1,11 @@
+﻿{
+  "Serial": {
+    "Port": "COM3",
+    "Baud": 115200,
+    "DataBits": 8,
+    "Parity": 0,
+    "StopBits": 0
+  },
+  "ExtractorExecutionInterval": 9, 
+  "ExtractedFilesPath": "C:\\applicationdata\\smartmeter\\extracted"
+}

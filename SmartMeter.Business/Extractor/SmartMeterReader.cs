@@ -1,15 +1,15 @@
 ﻿using System.IO;
 using System.Text;
 using RJCP.IO.Ports;
-using SmartMeter.Business.Interface;
 using SmartMeter.Business.Interface.Extractor;
+using SmartMeter.Configuration;
 
 namespace SmartMeter.Business.Extractor {
   public class SmartMeterReader : IReadSmartMeter {
     public string Read() {
       StringBuilder stringBuilder = new StringBuilder();
 
-      using (SerialPortStream serialPortStream = new SerialPortStream("COM3", 115200, 8, Parity.None, StopBits.One)) {
+      using (SerialPortStream serialPortStream = _CreateSerialPortStream()) {
         serialPortStream.Open();
 
         using (StreamReader streamReader = new StreamReader(serialPortStream)) {
@@ -23,6 +23,16 @@ namespace SmartMeter.Business.Extractor {
       }
 
       return stringBuilder.ToString();
+    }
+
+    private static SerialPortStream _CreateSerialPortStream() {
+      string port = Config.Instance.SerialPort;
+      int baud = Config.Instance.SerialBaud;
+      int dataBits = Config.Instance.SerialDataBits;
+      Parity parity = (Parity) Config.Instance.SerialParity;
+      StopBits stopBits = (StopBits) Config.Instance.SerialStopBits;
+
+      return new SerialPortStream(port, baud, dataBits, parity, stopBits);
     }
   }
 }

@@ -2,12 +2,14 @@
 using System.IO;
 using System.Threading;
 using SmartMeter.Business.Translator;
+using SmartMeter.Configuration;
 
 namespace SmartMeter.Translator {
   class Program {
     static void Main(string[] args) {
       while (true) {
         try {
+          Config instance = Config.Instance;
           TranslatorService translatorService = new TranslatorService();
           translatorService.Execute();
         }

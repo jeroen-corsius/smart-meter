@@ -1,7 +1,7 @@
 ﻿using System;
-using System.IO;
 using SmartMeter.Business.Interface;
 using SmartMeter.Business.Interface.Extractor;
+using SmartMeter.Configuration;
 
 namespace SmartMeter.Business.Extractor {
   public class ExtractorService {
@@ -11,7 +11,7 @@ namespace SmartMeter.Business.Extractor {
       string fileContents = smartMeterReader.Read();
 
       fileWriter
-        .WithPath(Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "extracted"))
+        .WithPath(Config.Instance.ExtractedFilesPath)
         .WithFilename(CreateFilename())
         .WithContents(fileContents)
         .Write();

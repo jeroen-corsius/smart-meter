@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using SmartMeter.Business.Extractor;
+using SmartMeter.Configuration;
 
 namespace SmartMeter.Extractor {
   class Program {
@@ -14,7 +15,8 @@ namespace SmartMeter.Extractor {
           Console.WriteLine($"An error occured while extracing files: {ex}");
         }
 
-        Thread.Sleep(TimeSpan.FromSeconds(9));
+        //TODO: Make sure setting 10 seconds as ExtractorExecutionInterval works fine (instead of using 9)
+        Thread.Sleep(Config.Instance.ExtractorExecutionInterval);
       }
     }
   }
