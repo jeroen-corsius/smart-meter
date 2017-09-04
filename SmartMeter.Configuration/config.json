@@ -6,6 +6,8 @@
     "Parity": 0,
     "StopBits": 0
   },
-  "ExtractorExecutionInterval": 9, 
-  "ExtractedFilesPath": "C:\\applicationdata\\smartmeter\\extracted"
+  "ExtractorExecutionInterval": 9,
+  "TranslatorExecutionInterval": 10,
+  "ExtractedFilesPath": "C:\\applicationdata\\smartmeter\\extracted",
+  "TranslatedFilesPath": "C:\\applicationdata\\smartmeter\\translated"
 }

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.IO;
 using Newtonsoft.Json;
-using SmartMeter.Business.Extractor;
 using SmartMeter.Business.Interface;
-using SmartMeter.Business.Interface.Extractor;
 using SmartMeter.Business.Interface.Translator;
+using SmartMeter.Configuration;
 
 namespace SmartMeter.Business.Translator {
   public class TranslatorService {
@@ -20,7 +19,7 @@ namespace SmartMeter.Business.Translator {
           IWriteFile fileWriter = new FileWriter();
 
           fileWriter
-            .WithPath(Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "translated"))
+            .WithPath(Config.Instance.TranslatedFilesPath)
             .WithFilename(_CreateFilename(extractedFile))
             .WithContents(serializedTelegram)
             .Write();
@@ -36,7 +35,7 @@ namespace SmartMeter.Business.Translator {
     }
 
     private FileInfo[] _ListExtractedFiles() {
-      string path = Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "extracted");
+      string path = Config.Instance.ExtractedFilesPath;
 
       Directory.CreateDirectory(path);
       DirectoryInfo directoryInfo = new DirectoryInfo(path);
