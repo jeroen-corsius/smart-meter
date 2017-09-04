@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartMeter.Business.Interface\SmartMeter.Business.Interface.csproj" />
+    <ProjectReference Include="..\SmartMeter.Persistence\SmartMeter.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

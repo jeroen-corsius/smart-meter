@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SmartMeter.Business.Interface\SmartMeter.Business.Interface.csproj" />
     <ProjectReference Include="..\SmartMeter.Business\SmartMeter.Business.csproj" />
+    <ProjectReference Include="..\SmartMeter.Persistence.Interface\SmartMeter.Persistence.Interface.csproj" />
   </ItemGroup>
 
   <ItemGroup>

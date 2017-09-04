@@ -2,7 +2,7 @@
 using SmartMeter.Persistence.Interface;
 
 namespace SmartMeter.Persistence {
-  public class Telgram : ITelegram {
+  public class Telegram : ITelegram {
     public DateTime Timestamp { get; set; }
     public decimal ElectricityConsumedTariff1 { get; set; }
     public decimal ElectricityConsumedTariff2 { get; set; }

@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SmartMeter.Persistence.Interface\SmartMeter.Persistence.Interface.csproj" />
+  </ItemGroup>
+
 </Project>
