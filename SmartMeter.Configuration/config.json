@@ -8,6 +8,7 @@
   },
   "ExtractorExecutionInterval": 9,
   "TranslatorExecutionInterval": 10,
+  "LoaderExecutionInterval": 10, 
   "ExtractedFilesPath": "C:\\applicationdata\\smartmeter\\extracted",
   "TranslatedFilesPath": "C:\\applicationdata\\smartmeter\\translated"
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using SmartMeter.Business.Loader;
+using SmartMeter.Configuration;
 
 namespace SmartMeter.Loader {
   class Program {
@@ -14,7 +15,7 @@ namespace SmartMeter.Loader {
           Console.WriteLine($"An error occured while loading files: {ex}");
         }
 
-        Thread.Sleep(TimeSpan.FromSeconds(10));
+        Thread.Sleep(Config.Instance.LoaderExecutionInterval);
       }
     }
   }

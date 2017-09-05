@@ -22,6 +22,7 @@ namespace SmartMeter.Configuration {
     public int SerialStopBits { get; private set; }
     public TimeSpan ExtractorExecutionInterval { get; private set; }
     public TimeSpan TranslatorExecutionInterval { get; private set; }
+    public TimeSpan LoaderExecutionInterval { get; private set; }
     public string ExtractedFilesPath { get; private set; }
     public string TranslatedFilesPath { get; private set; }
 
@@ -41,6 +42,7 @@ namespace SmartMeter.Configuration {
       SerialStopBits = Convert.ToInt32(configurationRoot["Serial:StopBits"]);
       ExtractorExecutionInterval = TimeSpan.FromSeconds(Convert.ToInt32(configurationRoot["ExtractorExecutionInterval"]));
       TranslatorExecutionInterval = TimeSpan.FromSeconds(Convert.ToInt32(configurationRoot["TranslatorExecutionInterval"]));
+      LoaderExecutionInterval = TimeSpan.FromSeconds(Convert.ToInt32(configurationRoot["LoaderExecutionInterval"]));
       ExtractedFilesPath = configurationRoot["ExtractedFilesPath"];
       TranslatedFilesPath = configurationRoot["TranslatedFilesPath"];
     }

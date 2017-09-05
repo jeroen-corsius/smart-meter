@@ -3,6 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using SmartMeter.Business.Interface;
 using SmartMeter.Business.Interface.Loader;
+using SmartMeter.Configuration;
 
 namespace SmartMeter.Business.Loader {
   public class LoaderService {
@@ -28,7 +29,7 @@ namespace SmartMeter.Business.Loader {
     }
 
     private FileInfo[] _ListTranslatedFiles() {
-      string path = Path.Combine(Directory.GetDirectoryRoot(AppContext.BaseDirectory), "applicationdata", "smartmeter", "translated");
+      string path = Config.Instance.TranslatedFilesPath;
 
       Directory.CreateDirectory(path);
       DirectoryInfo directoryInfo = new DirectoryInfo(path);
