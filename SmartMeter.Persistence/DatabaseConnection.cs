@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using MySql.Data.MySqlClient;
+using SmartMeter.Configuration;
 using SmartMeter.Persistence.Interface;
 
 namespace SmartMeter.Persistence {
@@ -16,11 +17,11 @@ namespace SmartMeter.Persistence {
 
     private string _CreateConnectionString() {
       MySqlConnectionStringBuilder mySqlConnectionStringBuilder = new MySqlConnectionStringBuilder {
-        Server = "127.0.0.1",
-        Port = 3306,
-        UserID = "smart_meter_loader",
-        Password = "iZv$lQJlyYCO%XFtOF^9Qqoa1Q%!k51b",
-        Database = "smart_meter",
+        Server = Config.Instance.DatabaseServer,
+        Port = Config.Instance.DatabasePort,
+        UserID = Config.Instance.DatabaseUserId,
+        Password = Config.Instance.DatabasePassword,
+        Database = Config.Instance.DatabaseDatabase,
         SslMode = MySqlSslMode.None
       };
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using Microsoft.Extensions.Configuration;
 
 namespace SmartMeter.Configuration {
@@ -25,6 +24,11 @@ namespace SmartMeter.Configuration {
     public TimeSpan LoaderExecutionInterval { get; private set; }
     public string ExtractedFilesPath { get; private set; }
     public string TranslatedFilesPath { get; private set; }
+    public string DatabaseServer { get; private set; }
+    public uint DatabasePort { get; private set; }
+    public string DatabaseUserId { get; private set; }
+    public string DatabasePassword { get; private set; }
+    public string DatabaseDatabase { get; private set; }
 
     private Config() {
       _LoadConfiguration();
@@ -33,6 +37,7 @@ namespace SmartMeter.Configuration {
     private void _LoadConfiguration() {
       IConfigurationRoot configurationRoot = new ConfigurationBuilder()
         .AddJsonFile("config.json")
+        .AddEnvironmentVariables("SMARTMETER_")
         .Build();
 
       SerialPort = configurationRoot["Serial:Port"];
@@ -45,6 +50,11 @@ namespace SmartMeter.Configuration {
       LoaderExecutionInterval = TimeSpan.FromSeconds(Convert.ToInt32(configurationRoot["LoaderExecutionInterval"]));
       ExtractedFilesPath = configurationRoot["ExtractedFilesPath"];
       TranslatedFilesPath = configurationRoot["TranslatedFilesPath"];
+      DatabaseServer = configurationRoot["DATABASE_SERVER"];
+      DatabasePort = Convert.ToUInt32(configurationRoot["DATABASE_PORT"]);
+      DatabaseUserId = configurationRoot["DATABASE_USERID"];
+      DatabasePassword = configurationRoot["DATABASE_PASSWORD"];
+      DatabaseDatabase = configurationRoot["DATABASE_DATABASE"];
     }
   }
 }
