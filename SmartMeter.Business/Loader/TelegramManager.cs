@@ -1,4 +1,5 @@
-﻿using SmartMeter.Business.Interface.Loader;
+﻿using System.Collections.Generic;
+using SmartMeter.Business.Interface.Loader;
 using SmartMeter.Business.Interface.Mapper;
 using SmartMeter.Business.Mapper;
 using SmartMeter.Persistence;
@@ -12,6 +13,14 @@ namespace SmartMeter.Business.Loader {
 
       IPersistTelegram telegramRepository = new TelegramRepository();
       telegramRepository.Save(persistenceTelegram);
+    }
+
+    public IEnumerable<Business.Interface.ITelegram> SelectRecent() {
+      IPersistTelegram telegramRepository = new TelegramRepository();
+      IEnumerable<Persistence.Interface.ITelegram> persistenceTelegrams = telegramRepository.SelectRecent();
+
+      IMapTelegram telegramMapper = new TelegramMapper();
+      return telegramMapper.Map(persistenceTelegrams);
     }
   }
 }
