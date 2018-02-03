@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using Dapper;
 using SmartMeter.Persistence.Interface;
 
@@ -21,6 +22,17 @@ namespace SmartMeter.Persistence {
 
       using (IDbConnection connection = new DatabaseConnection().CreateConnection()) {
         connection.Execute(statement, telegram);
+      }
+    }
+
+    public IEnumerable<ITelegram> SelectRecent() {
+      string statement = @"
+        SELECT *
+        FROM `electricity`
+        ORDER BY Timestamp;";
+
+      using (IDbConnection connection = new DatabaseConnection().CreateConnection()) {
+        return connection.Query<Telegram>(statement);
       }
     }
   }
