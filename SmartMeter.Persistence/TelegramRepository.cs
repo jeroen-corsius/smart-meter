@@ -6,7 +6,7 @@ namespace SmartMeter.Persistence {
   public class TelegramRepository : IPersistTelegram {
     public void Save(ITelegram telegram) {
       string statement = @"
-        INSERT INTO `smart_meter`.`smart_meter_1`
+        INSERT INTO `electricity`
         (Timestamp, ElectricityConsumedTariff1, ElectricityConsumedTariff2, ElectricityDeliveredTariff1, ElectricityDeliveredTariff2, ElectrictyConsumedActual, ElectricityDeliveredActual)
         VALUES 
         (@Timestamp, @ElectricityConsumedTariff1, @ElectricityConsumedTariff2, @ElectricityDeliveredTariff1, @ElectricityDeliveredTariff2, @ElectrictyConsumedActual, @ElectricityDeliveredActual)

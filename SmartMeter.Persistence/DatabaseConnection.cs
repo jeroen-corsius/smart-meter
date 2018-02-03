@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using MySql.Data.MySqlClient;
 using SmartMeter.Configuration;
 using SmartMeter.Persistence.Interface;

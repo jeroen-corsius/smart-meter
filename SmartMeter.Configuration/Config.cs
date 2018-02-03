@@ -37,9 +37,9 @@ namespace SmartMeter.Configuration {
     private void _LoadConfiguration() {
       IConfigurationRoot configurationRoot = new ConfigurationBuilder()
         .AddJsonFile("config.json")
-        .AddEnvironmentVariables("SMARTMETER_")
+        .AddEnvironmentVariables()
         .Build();
-
+      
       SerialPort = configurationRoot["Serial:Port"];
       SerialBaud = Convert.ToInt32(configurationRoot["Serial:Baud"]);
       SerialDataBits = Convert.ToInt32(configurationRoot["Serial:DataBits"]);
@@ -50,11 +50,11 @@ namespace SmartMeter.Configuration {
       LoaderExecutionInterval = TimeSpan.FromSeconds(Convert.ToInt32(configurationRoot["LoaderExecutionInterval"]));
       ExtractedFilesPath = configurationRoot["ExtractedFilesPath"];
       TranslatedFilesPath = configurationRoot["TranslatedFilesPath"];
-      DatabaseServer = configurationRoot["DATABASE_SERVER"];
-      DatabasePort = Convert.ToUInt32(configurationRoot["DATABASE_PORT"]);
-      DatabaseUserId = configurationRoot["DATABASE_USERID"];
-      DatabasePassword = configurationRoot["DATABASE_PASSWORD"];
-      DatabaseDatabase = configurationRoot["DATABASE_DATABASE"];
+      DatabaseServer = configurationRoot.GetSection("SMARTMETER_DATABASE_SERVER").Value;
+      DatabasePort = Convert.ToUInt32(configurationRoot.GetSection("SMARTMETER_DATABASE_PORT").Value);
+      DatabaseUserId = configurationRoot.GetSection("SMARTMETER_DATABASE_USERID").Value;
+      DatabasePassword = configurationRoot.GetSection("SMARTMETER_DATABASE_PASSWORD").Value;
+      DatabaseDatabase = configurationRoot.GetSection("SMARTMETER_DATABASE_DATABASE").Value;
     }
   }
 }
