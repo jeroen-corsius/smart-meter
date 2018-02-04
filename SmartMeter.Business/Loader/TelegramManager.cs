@@ -4,6 +4,7 @@ using SmartMeter.Business.Interface.Mapper;
 using SmartMeter.Business.Mapper;
 using SmartMeter.Persistence;
 using SmartMeter.Persistence.Interface;
+using ITelegram = SmartMeter.Business.Interface.ITelegram;
 
 namespace SmartMeter.Business.Loader {
   public class TelegramManager : IManageTelegram {
@@ -21,6 +22,14 @@ namespace SmartMeter.Business.Loader {
 
       IMapTelegram telegramMapper = new TelegramMapper();
       return telegramMapper.Map(persistenceTelegrams);
+    }
+
+    public ITelegram SelectCurrent() {
+      IPersistTelegram telegramRepository = new TelegramRepository();
+      Persistence.Interface.ITelegram persistenceTelegram = telegramRepository.SelectCurrent();
+
+      IMapTelegram telegramMapper = new TelegramMapper();
+      return telegramMapper.Map(persistenceTelegram);
     }
   }
 }

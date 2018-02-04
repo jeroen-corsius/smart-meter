@@ -14,5 +14,13 @@ namespace SmartMeter.API.Controllers {
 
       return Ok(telegrams);
     }
+
+    [HttpGet("Current")]
+    public IActionResult GetCurrent() {
+      IManageTelegram telegramManager = new TelegramManager();
+      ITelegram telegram = telegramManager.SelectCurrent();
+
+      return Ok(telegram);
+    }
   }
 }

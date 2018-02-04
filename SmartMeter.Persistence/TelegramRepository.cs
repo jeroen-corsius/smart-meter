@@ -35,5 +35,17 @@ namespace SmartMeter.Persistence {
         return connection.Query<Telegram>(statement);
       }
     }
+
+    public ITelegram SelectCurrent() {
+      string statement = @"
+        SELECT *
+        FROM `electricity`
+        ORDER BY Timestamp DESC
+        LIMIT 1;";
+
+      using (IDbConnection connection = new DatabaseConnection().CreateConnection()) {
+        return connection.QuerySingle<Telegram>(statement);
+      }
+    }
   }
 }
