@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMeter.Persistence", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMeter.Configuration", "SmartMeter.Configuration\SmartMeter.Configuration.csproj", "{5D938C8C-FFFD-437D-BBDA-02ADA779A1FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeter.API", "SmartMeter.API\SmartMeter.API.csproj", "{187A1242-0520-4377-AD0B-A3E7196BD6AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartMeter.API", "SmartMeter.API\SmartMeter.API.csproj", "{187A1242-0520-4377-AD0B-A3E7196BD6AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeter.UI", "SmartMeter.UI\SmartMeter.UI.csproj", "{091C170C-A155-4427-B401-F8C818E8EF2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{187A1242-0520-4377-AD0B-A3E7196BD6AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{187A1242-0520-4377-AD0B-A3E7196BD6AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{187A1242-0520-4377-AD0B-A3E7196BD6AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{091C170C-A155-4427-B401-F8C818E8EF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{091C170C-A155-4427-B401-F8C818E8EF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{091C170C-A155-4427-B401-F8C818E8EF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{091C170C-A155-4427-B401-F8C818E8EF2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
