@@ -7,10 +7,10 @@ using SmartMeter.Business.Loader;
 namespace SmartMeter.API.Controllers {
   [Route("api/[controller]")]
   public class ElectricityController : Controller {
-    [HttpGet("Recent")]
-    public IActionResult GetRecent() {
+    [HttpGet("Last5Minutes")]
+    public IActionResult GetLast5Minutes() {
       IManageTelegram telegramManager = new TelegramManager();
-      IEnumerable<ITelegram> telegrams = telegramManager.SelectRecent();
+      IEnumerable<ITelegram> telegrams = telegramManager.SelectLast5Minutes();
 
       return Ok(telegrams);
     }

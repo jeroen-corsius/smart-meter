@@ -3,7 +3,7 @@
 namespace SmartMeter.Persistence.Interface {
   public interface IPersistTelegram {
     void Save(ITelegram telegram);
-    IEnumerable<ITelegram> SelectRecent();
+    IEnumerable<ITelegram> SelectLast5Minutes();
     ITelegram SelectCurrent();
   }
 }

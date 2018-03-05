@@ -16,9 +16,9 @@ namespace SmartMeter.Business.Loader {
       telegramRepository.Save(persistenceTelegram);
     }
 
-    public IEnumerable<Business.Interface.ITelegram> SelectRecent() {
+    public IEnumerable<Business.Interface.ITelegram> SelectLast5Minutes() {
       IPersistTelegram telegramRepository = new TelegramRepository();
-      IEnumerable<Persistence.Interface.ITelegram> persistenceTelegrams = telegramRepository.SelectRecent();
+      IEnumerable<Persistence.Interface.ITelegram> persistenceTelegrams = telegramRepository.SelectLast5Minutes();
 
       IMapTelegram telegramMapper = new TelegramMapper();
       return telegramMapper.Map(persistenceTelegrams);

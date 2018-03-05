@@ -25,11 +25,16 @@ namespace SmartMeter.Persistence {
       }
     }
 
-    public IEnumerable<ITelegram> SelectRecent() {
+    public IEnumerable<ITelegram> SelectLast5Minutes() {
       string statement = @"
         SELECT *
-        FROM `electricity`
-        ORDER BY Timestamp;";
+        FROM (
+          SELECT *
+          FROM `electricity`
+          ORDER BY Timestamp DESC
+          LIMIT 30
+        ) e
+        ORDER BY e.Timestamp;";
 
       using (IDbConnection connection = new DatabaseConnection().CreateConnection()) {
         return connection.Query<Telegram>(statement);
